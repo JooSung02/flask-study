@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>회원 목록</title>
+</head>
+<body>
+    <h1>👥 회원 목록</h1>
+    <ul>
+        {% for user in users %}
+            <li>
+                {{ user.name }}
+                {% if user.vip %}
+                    🌟 (VIP)
+                {% else %}
+                    일반회원
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

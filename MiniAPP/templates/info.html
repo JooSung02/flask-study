@@ -1,0 +1,16 @@
+<!-- templates/info.html -->
+<h2>📄 사용자 정보 입력</h2>
+<form method="post">
+    이름: <input type="text" name="name"><br>
+    이메일: <input type="email" name="email"><br>
+    나이: <input type="number" name="age"><br>
+    <button type="submit">제출</button>
+</form>
+
+{% if name %}
+<h3>✅ 입력된 정보</h3>
+<p>이름: {{ name }}</p>
+<p>이메일: {{ email }}</p>
+<p>나이: {{ age }}</p>
+<a href="/memo">메모 쓰러 가기</a>
+{% endif %}

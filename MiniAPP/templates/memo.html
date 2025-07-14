@@ -1,0 +1,13 @@
+<!-- templates/memo.html -->
+<h2>📝 메모 남기기</h2>
+<form method="post">
+    <textarea name="note" placeholder="메모를 작성하세요" rows="4" cols="30"></textarea><br>
+    <button type="submit">저장</button>
+</form>
+
+<h3>📋 지금까지 남긴 메모:</h3>
+<ul>
+{% for m in memos %}
+    <li>{{ m }}</li>
+{% endfor %}
+</ul>
