@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>메모장</title>  <!--탭에 표시되는 제목-->
+</head>
+<body>
+    <h2>메모 입력</h2>
+    <form method="POST">  <!--사용자가 이 폼을 제출하면 POST 방식으로 서버에 데이터 보냄-->
+        <input type="text" name="note" placeholder="메모를 입력하세요" required>  <!--서버에 보낼때 note로보냄, required로 빈칸 방지-->
+        <button type="submit">저장</button>  <!--제출버튼-->
+    </form>
+
+    <h3>📒 저장된 메모</h3>
+    <ul>
+        {% for memo in memos %}  <!--이거는 그냥 저장된 순서대로 메모 출력-->
+            <li>{{ memo.content }}</li>
+        {% else %}
+            <li>아직 메모가 없습니다.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
