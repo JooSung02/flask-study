@@ -27,6 +27,13 @@ def delete_memo(memo_id):  # 연결된 삭제 함수
         db.session.commit()  # 예약해둔 메모를 실제로 DB에서 삭제
     return redirect(url_for('memo'))  # 다시 기본 화면으로 초기화 (memo() 함수와 연결된 라우트로 이동)
 
+@app.route('/delete_all/', methods=['POST'])
+def delete_all() :
+    if Memo.query.count() > 0 :
+        Memo.query.delete()
+        db.session.commit()
+    return redirect(url_for('memo'))
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()

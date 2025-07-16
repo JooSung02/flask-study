@@ -10,6 +10,9 @@
         <input type="text" name="note" placeholder="메모를 입력하세요" required>  <!--서버에 보낼때 note로보냄, required로 빈칸 방지-->
         <button type="submit">저장</button>  <!--제출버튼-->
     </form>
+    <form method="POST" action="{{ url_for('delete_all') }}">
+        <button type="submit">전체 삭제(!)</button>
+    </form>
 
     <h3>📒 저장된 메모</h3>
     <ul>
