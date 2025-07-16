@@ -13,11 +13,16 @@
 
     <h3>📒 저장된 메모</h3>
     <ul>
-        {% for memo in memos %}  <!--이거는 그냥 저장된 순서대로 메모 출력-->
-            <li>{{ memo.content }}</li>
-        {% else %}
-            <li>아직 메모가 없습니다.</li>
-        {% endfor %}
+    {% for memo in memos %}
+        <li>
+            {{ memo.content }}
+            <form method="POST" action="{{ url_for('delete_memo', memo_id=memo.id) }}" style="display:inline;">
+                <button type="submit">❌ 삭제</button>
+            </form>
+        </li>
+    {% else %}
+        <li>아직 메모가 없습니다.</li>
+    {% endfor %}
     </ul>
 </body>
 </html>
