@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+</head>
+<body>
+    <h2>로그인</h2>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="POST">
+        <input type="text" name="username" placeholder="사용자 이름" required><br><br>
+        <input type="password" name="password" placeholder="비밀번호" required><br><br>
+        <button type="submit">로그인</button>
+    </form>
+
+    <br>
+    <p>👉 <a href="{{ url_for('find') }}">아이디 / 비밀번호 찾기</a></p>
+
+    <p>회원이 아니신가요? <a href="{{ url_for('register') }}">회원가입</a></p>
+
+    <p>탈퇴 <a href="{{ url_for('delete_user') }}">계정삭제</a></p>
+</body>
+</html>

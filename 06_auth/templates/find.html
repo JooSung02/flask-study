@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>계정 정보 찾기</title>
+</head>
+<body>
+    <h2>🔍 계정 정보 찾기</h2>
+
+    <form method="POST">
+        <h4>1️⃣ 사용자 이름으로 비밀번호 찾기</h4>
+        <input type="text" name="find_pw_username" placeholder="사용자 이름 입력" required>
+        <button type="submit" name="action" value="find_pw">비밀번호 찾기</button>
+    </form>
+    <br><br>
+    <form method="POST">
+        <h4>2️⃣ 비밀번호로 사용자 이름 찾기</h4>
+        <input type="text" name="find_user_password" placeholder="비밀번호 입력" required>
+        <button type="submit" name="action" value="find_user">사용자 이름 찾기</button>
+    </form>
+
+    {% if result %}
+        <p><strong>{{ result }}</strong></p>
+    {% elif error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <p><a href="/">홈으로</a></p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>계정 삭제</title>
+</head>
+<body>
+    <h2>계정 삭제</h2>
+    <form method="POST">
+        <label for="username">삭제할 사용자명:</label>
+        <input type="text" name="username" required>
+        <button type="submit">삭제하기</button>
+    </form>
+    <p style="color: red;">{{ message }}</p>
+    <p><a href="/">홈으로 돌아가기</a></p>
+</body>
+</html>
